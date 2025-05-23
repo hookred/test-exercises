@@ -1,9 +1,9 @@
-import { getInputProps, useForm } from "@conform-to/react";
+import { getInputProps, getTextareaProps, useForm } from "@conform-to/react";
 import { getZodConstraint, parseWithZod } from "@conform-to/zod";
 import { type ActionFunctionArgs, data, type LoaderFunctionArgs } from "react-router";
 import { safeRedirect } from "remix-utils/safe-redirect";
 import { FormTemplate } from "#app/components/forms/default-form.tsx";
-import { InputField } from "#app/components/forms.tsx";
+import { InputField, TextareaField } from "#app/components/forms.tsx";
 import { createCourse } from "#app/models/course.server.ts";
 import { useIsPending } from "#app/utils/misc.tsx";
 import { requireUserWithPermission } from "#app/utils/permissions.server.ts";
@@ -61,11 +61,10 @@ export default function NewCourse() {
           {...getInputProps(fields.title, { type: 'text' }) }
         />
 
-        {/* TODO: Use a textarea */}
-        <InputField
+        <TextareaField
           label="Content"
           errors={fields.content.errors}
-          { ...getInputProps(fields.content, { type: 'text' })}
+          { ...getTextareaProps(fields.content) }
         />
       </FormTemplate>
     </main>

@@ -32,6 +32,17 @@ npx epicli
 [Read the docs](https://github.com/epicweb-dev/epic-stack/blob/main/docs)
 (please 🙏).
 
+## Running Tests
+
+To run the automated tests, use the following command:
+
+```bash
+pnpm test
+```
+
+This will execute all unit and integration tests using Vitest.
+Make sure you have installed all dependencies with `pnpm install` before running the tests.
+
 ## Support
 
 - 🆘 Join the
